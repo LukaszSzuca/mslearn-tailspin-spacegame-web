@@ -9,7 +9,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-  dotnetSdkVersion: '2.1.505'
+  dotnetSdkVersion: '2.2'
 
 steps:
 - task: DotNetCoreInstaller@0
@@ -51,7 +51,7 @@ steps:
     command: 'test'
     arguments: '--no-build --configuration $(buildConfiguration)'
     publishTestResults: true
-    projects: '**/*.Tesr.csproj'
+    projects: '**/*.Tesr.csproj'  
 
 - task: DotNetCoreCLI@2
   displayName: 'Publish the project - $(buildConfiguration)'
